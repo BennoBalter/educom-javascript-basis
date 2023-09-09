@@ -1,23 +1,29 @@
 <html>
   <head>
       <script>
-        
-        // Define a function that checks if a number is even
-        function isEven(number) {
-          return number % 2 === 0;
-        }
 
-        // Initialize a variable to hold the total
-        let total = 0;
+       function calculateTotalAndCheckEven() {
+        let total = 0; // Initialize a variable to hold the total
 
-        // Loop from 0 to 100 and add even numbers to the total
         for (let i = 0; i <= 100; i++) {
-          if (isEven(i)) {
-            total += i;
+          if (i % 2 === 0) {
+            // Check if the number is even
+            total += i; // Add the even number to the total
           }
         }
 
-console.log(`The sum of even numbers from 0 to 100 is: ${total}`);
+        // Check if the total is even or odd
+        if (total % 2 === 0) {
+          return true; // Total is even
+        } else {
+          return false; // Total is odd
+        }
+      }
+
+      const isEvenTotal = calculateTotalAndCheckEven();
+
+      console.log(`Is the total even? ${isEvenTotal}`);
+
       </script>
   </head>
   <body>
