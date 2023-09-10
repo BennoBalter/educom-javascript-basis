@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <script>  
+        
+      // Define an array of prices for the items in the cart
+      const cartItems = [
+        { name: "Item 1", price: 10 },
+        { name: "Item 2", price: 15 },
+        { name: "Item 3", price: 20 },
+        { name: "Item 4", price: 25 },
+      ];
+
+      // Function to calculate the total price of items in the cart
+      const calculateTotalPrice = (items) => {
+        const subtotal = items.reduce((total, item) => total + item.price, 0);
+        return subtotal;
+      };
+
+      // Function to calculate the total price with tax
+      const calculateTotalPriceWithTax = (items, taxRate) => {
+        const subtotal = calculateTotalPrice(items);
+        const taxAmount = subtotal * (taxRate / 100);
+        const totalPrice = subtotal + taxAmount;
+        return totalPrice;
+      };
+
+      // Calculate the total price with a 21% tax
+      const taxRate = 21; // 21% tax rate
+      const totalPriceWithTax = calculateTotalPriceWithTax(cartItems, taxRate);
+
+      // Display the results
+      console.log("Items in Cart:");
+      cartItems.forEach((item) => {
+        console.log(`${item.name}: $${item.price}`);
+      });
+      console.log(`Subtotal: $${calculateTotalPrice(cartItems)}`);
+      console.log(`Total Price with ${taxRate}% Tax: $${totalPriceWithTax.toFixed(2)}`);
+
+    </script>   
+  </head>
+  <body>
+  </body>
+</html>
+
