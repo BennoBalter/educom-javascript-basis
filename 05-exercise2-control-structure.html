@@ -14,16 +14,18 @@
 
         // Check if the total is even or odd
         if (total % 2 === 0) {
-          return true; // Total is even
+          return {total, isEven:true}; // Total is even
         } else {
-          return false; // Total is odd
+          return {total, isEven:false}; // Total is odd
         }
       }
 
-      const isEvenTotal = calculateTotalAndCheckEven();
+      const result = calculateTotalAndCheckEven();
 
-      console.log(`Is the total even? ${isEvenTotal}`);
-
+      console.log(`Is the total even? ${result.isEven}`);
+      console.log(`Total of even numbers: ${result.total}`);
+      console.log(calculateTotalAndCheckEven());
+      
       </script>
   </head>
   <body>
