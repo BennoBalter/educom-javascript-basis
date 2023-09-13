@@ -1,19 +1,17 @@
 <html>
   <head>
-    <script>  
-        
+    <script>
+    
       let txt = ""
-      const  beatles = ["Ringo", "Paul", "George", "John"]
+      const beatles = ["Ringo", "Paul", "George", "John"]
       
-      
-      const inLoop = (value, index, array) => {
-        txt += value.toUpperCase()
-      }
-      
-      beatles.forEach(inLoop)
+      beatles.forEach( (value, index, array) => {
+          txt += `${ value.toUpperCase() } - `
+      })
+              
       console.log(txt)
       
-    </script>   
+      </script>  
   </head>
   <body>
   </body>
